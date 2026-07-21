@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "slug": "hello-world",
+      "title": "Hello, World — Why I Keep This Notebook",
+      "date": "2026-06-25",
+      "summary": "A short note on why I am starting to write here, and what to expect."
+    }
+  ]
+}

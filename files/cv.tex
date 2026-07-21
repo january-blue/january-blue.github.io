@@ -1,0 +1,161 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[margin=0.55in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{microtype}
+
+\hypersetup{colorlinks=true,urlcolor=black,linkcolor=black}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1.03}
+\setlist[itemize]{leftmargin=1.15em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+\titleformat{\section}
+  {\normalsize\bfseries\uppercase}
+  {}
+  {0pt}
+  {}
+  [\vspace{-2pt}\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}p{0.24\textwidth}@{}}
+    {\small\textbf{#1}} & {\small #2} \\
+    {\small\textit{#3}} & {\small\textit{#4}} \\
+  \end{tabularx}\vspace{1.25pt}
+}
+
+\newcommand{\shortentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}p{0.18\textwidth}@{}}
+    {\small\textbf{#1}} & {\small #2} \\
+    \multicolumn{2}{@{}>{\raggedright\arraybackslash}X@{}}{{\small\textit{#3}}} \\
+  \end{tabularx}\vspace{1pt}
+}
+
+\newcommand{\publication}[5]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{}}
+    {\small\bfseries\mbox{#1}} \\
+    {\small #2 \quad | \quad #3} \\
+    {\small #4} \\
+    {\small \textit{#5}} \\
+  \end{tabularx}\vspace{2pt}
+}
+
+\newcommand{\skillline}[2]{{\small\textbf{#1:} #2}\\[1pt]}
+
+\begin{document}
+\enlargethispage{3\baselineskip}
+
+\begin{center}
+    {\LARGE \textbf{Kexin Tan}}\\[3pt]
+    Tokyo, Japan \;|\; (+81) 07074790623 \;|\; \href{mailto:bluellatan@gmail.com}{bluellatan@gmail.com} \;|\;
+    \href{https://january-blue.github.io/}{january-blue.github.io} \;|\; \href{https://github.com/january-blue}{GitHub}
+\end{center}
+\vspace{-4pt}
+
+\section*{Research Experience}
+
+\entry
+{Research Assistant Intern, NLP Lab, Fudan University}
+{Shanghai, China}
+{logic-and-NLP benchmarks; scholarly agentic systems}
+{2025.10--Present}
+
+\entry
+{Teaching Assistant, Quantitative Risk Management, Fudan University}
+{Shanghai, China}
+{Supported Q\&A for international students}
+{2020.07--2020.08}
+
+\entry
+{Research Assistant Intern, Green Finance Research Center, Fudan University}
+{Shanghai, China}
+{Literature translation \& collation for environmental economics research}
+{2019.11--2020.02}
+
+\section*{Selected Publications \& Preprints}
+\vspace{-2pt}
+{\small * denotes co-first authorship.}
+\vspace{2pt}
+
+\publication
+{OpenNovelty: An LLM-Powered Agentic System for Verifiable Scholarly Novelty Assessment}
+{arXiv preprint, 2026}
+{M. Zhang*\textsuperscript{\dag}, \textbf{K. Tan}*, Y. Huang*, Y. Shen, C. Ma, L. Ju, X. Zhang, et al.}
+{\href{https://arxiv.org/abs/2601.01576}{Paper} \;|\; \href{https://github.com/january-blue/OpenNovelty}{Code} \;|\; \href{https://opennovelty.org/}{Website}}
+{Agentic scholarly assessment; evidence-grounded novelty analysis; peer-review assistance.}
+
+\publication
+{LLMEval-Fair: A Large-Scale Longitudinal Study on Robust and Fair Evaluation of Large Language Models}
+{ACL Main, 2026}
+{M. Zhang*\textsuperscript{\dag}, Y. Shen*, J. Deng*, Y. Wang*, H. Sha, \textbf{K. Tan}, Q. Peng, et al.}
+{\href{https://arxiv.org/abs/2508.05452}{Paper} \;|\; \href{https://github.com/llmeval/LLMEval-Fair}{Code}}
+{Dynamic LLM evaluation; contamination-resistant benchmarking; longitudinal model comparison.}
+
+\publication
+{Can Deep Research Agents Retrieve and Organize? Evaluating the Synthesis Gap with Expert Taxonomies}
+{arXiv preprint, 2026}
+{M. Zhang*\textsuperscript{\dag}, J. Zhuang*, W. Jing*, \textbf{K. Tan}*, Z. Kong, J. Deng, Y. Shen, et al.}
+{\href{https://arxiv.org/abs/2601.12369}{Paper}}
+{TaxoBench; deep research agents; expert taxonomy reconstruction; retrieval and organization metrics.}
+
+\section*{Professional Experience}
+
+\entry
+{1Token Inc.}
+{Shanghai, China}
+{Growth Lead, Data \& Strategy}
+{2022.07--2025.06}
+\begin{itemize}
+    \item Built global institutional databases and supported lead pipeline analysis, funding network mapping, and market research for data-driven growth strategy.
+    \item Designed product-led-growth trials and improved online acquisition through growth analytics, SEO, website optimization, RPA, and NLP-based business attribute recognition.
+\end{itemize}
+\vspace{2pt}
+
+\shortentry
+{Earlier Research and Strategy Internships}
+{2020--2022}
+{1Token Growth Intern; Airwallex Operations Strategy Intern; MioTech Research Analyst Intern and China Concept Stock ESG Data Analyst Intern}
+
+\section*{Education}
+
+\entry
+{The University of Tokyo}
+{Tokyo, Japan}
+{M.Eng., Technology Management for Innovation}
+{2026.04--Present}
+
+\entry
+{Georgia Institute of Technology}
+{Remote}
+{Online M.S. in Computer Science, withdrawn; GPA: 90/100, 4.0/4.0}
+{2024--2025}
+
+\entry
+{Fudan University}
+{Shanghai, China}
+{B.S., Mathematical Economics; GPA: 84/100, 3.15/4.0}
+{2018.09--2022.06}
+
+\shortentry
+{Chengdu Foreign Languages School}
+{2012.09--2018.06}
+{Secondary Education; graduated with first place.}
+
+\section*{Skills \& Activities}
+\skillline{Programming / Markup}{Python; C; Java; HTML; CSS; JavaScript; Stata; R; MATLAB; MySQL; \LaTeX}
+\skillline{Languages}{Chinese, native; English, fluent, TOEFL 108; Japanese / German / Russian, elementary}
+\skillline{Activities}{Volunteer of Anti-2019-nCoV: collected hospital and victim data in Wuhan, searched for medical supplies, and translated WHO documents.}
+
+\end{document}

@@ -1,0 +1,163 @@
+body {
+  margin-left: 16px;
+  margin-right: 16px;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 16px;
+  line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-weight: 400;
+}
+
+.page-shell {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 32px;
+}
+
+.profile {
+  position: sticky;
+  top: 8px;
+  align-self: start;
+}
+
+.profile h1 {
+  white-space: nowrap;
+}
+
+.name-zh {
+  margin-top: -1em;
+  font-family: "Kaiti SC", KaiTi, STKaiti, "BiauKai", serif;
+  font-size: 20px;
+}
+
+.profile-photo {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin-top: 1em;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.content {
+  min-width: 0;
+}
+
+.content > h3 {
+  font-weight: 600;
+}
+
+.publication {
+  margin-bottom: 0.75em;
+}
+
+.authors summary {
+  cursor: pointer;
+}
+
+.authors > div {
+  margin-left: 1.25em;
+}
+
+.author-toggle {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+.author-toggle::after {
+  content: "Show all authors";
+}
+
+.authors[open] .author-toggle::after {
+  content: "Hide authors";
+}
+
+.me {
+  font-weight: 600;
+}
+
+.experience {
+  margin: 1em 0;
+}
+
+.experience summary {
+  cursor: pointer;
+}
+
+.experience > div {
+  margin: 0.25em 0 0 1.25em;
+}
+
+.experience-toggle {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+.experience-toggle::after {
+  content: "Show details";
+}
+
+.experience[open] .experience-toggle::after {
+  content: "Hide details";
+}
+
+/* Minimal structural rules for the writing pages. */
+.blog-nav {
+  margin-bottom: 1em;
+}
+
+.post-list {
+  padding: 0;
+  list-style: none;
+}
+
+.post-item {
+  margin-bottom: 1em;
+}
+
+.post-item__title,
+.post-item__date,
+.post-item__summary {
+  display: block;
+}
+
+.post-item__date {
+  font-size: small;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose pre {
+  overflow-x: auto;
+}
+
+footer {
+  margin-top: 2em;
+  font-size: small;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    display: block;
+  }
+
+  .profile {
+    position: static;
+  }
+
+  .content {
+    margin-top: 2em;
+  }
+}
