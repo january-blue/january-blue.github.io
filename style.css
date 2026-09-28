@@ -1,9 +1,40 @@
+html {
+  min-height: 100%;
+  background: #eef0f1;
+}
+
+:root {
+  --accent: #31577f;
+  --accent-strong: #17366d;
+  --accent-line: #9aa7bd;
+  --font-sans: "Newsreader", "Noto Sans SC", serif;
+}
+
 body {
-  margin-left: 16px;
-  margin-right: 16px;
-  font-family: "Noto Sans SC", sans-serif;
-  font-size: 16px;
-  line-height: normal;
+  box-sizing: border-box;
+  max-width: 1120px;
+  margin: 32px auto;
+  padding: 24px 36px 40px;
+  color: #262a2c;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a,
+a:link,
+a:visited {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--accent-strong);
 }
 
 h1,
@@ -20,7 +51,7 @@ b {
 .page-shell {
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
-  gap: 32px;
+  gap: 36px;
 }
 
 .profile {
@@ -31,21 +62,32 @@ b {
 
 .profile h1 {
   white-space: nowrap;
+  color: var(--accent-strong);
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .name-zh {
   margin-top: -1em;
   font-family: "Kaiti SC", KaiTi, STKaiti, "BiauKai", serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .profile-photo {
   display: block;
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: auto;
   margin-top: 1em;
-  object-fit: cover;
-  object-position: center 22%;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.16);
 }
 
 .content {
@@ -54,14 +96,41 @@ b {
 
 .content > h3 {
   font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
+  color: var(--accent-strong);
+  border-bottom: 2px solid var(--accent-line);
+  padding-bottom: 4px;
+  margin-top: 1.3em;
+  margin-bottom: 0.8em;
 }
 
 .publication {
-  margin-bottom: 0.75em;
+  margin-bottom: 1.15em;
+}
+
+.publication > div:first-child {
+  line-height: 1.45;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.venue-abbr {
+  font-weight: 600;
 }
 
 .authors summary {
   cursor: pointer;
+}
+
+.authors,
+.publication > div:last-child {
+  font-size: 0.88em;
+  line-height: 1.45;
+}
+
+.publication-meta {
+  font-weight: 400;
 }
 
 .authors > div {
@@ -69,7 +138,6 @@ b {
 }
 
 .author-toggle {
-  color: #0000ee;
   text-decoration: underline;
 }
 
@@ -79,6 +147,10 @@ b {
 
 .authors[open] .author-toggle::after {
   content: "Hide authors";
+}
+
+.authors[open] .author-preview {
+  display: none;
 }
 
 .me {
@@ -93,12 +165,16 @@ b {
   cursor: pointer;
 }
 
+.experience summary strong {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
 .experience > div {
   margin: 0.25em 0 0 1.25em;
 }
 
 .experience-toggle {
-  color: #0000ee;
   text-decoration: underline;
 }
 
@@ -108,6 +184,11 @@ b {
 
 .experience[open] .experience-toggle::after {
   content: "Hide details";
+}
+
+.education-item > strong {
+  color: var(--accent-strong);
+  font-weight: 600;
 }
 
 /* Minimal structural rules for the writing pages. */
@@ -149,6 +230,17 @@ footer {
 }
 
 @media (max-width: 720px) {
+  html {
+    background: #ffffff;
+  }
+
+  body {
+    margin: 0;
+    padding: 16px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   .page-shell {
     display: block;
   }
